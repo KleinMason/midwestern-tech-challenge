@@ -1,0 +1,10 @@
+{
+  "name": "midwestern-tech-challenge",
+  "projects": [
+    {
+      "name": "midwestern-client",
+      "environment": "node",
+      "path": "client"
+    }
+  ]
+}
