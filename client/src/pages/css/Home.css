@@ -1,0 +1,12 @@
+.home h1 {
+  font-size: 3rem;
+}
+.home h1 .accent {
+  border-bottom: solid var(--clr-gold) 4px;
+}
+.home .challenge-link {
+  color: var(--clr-gold);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=Home.css.map */

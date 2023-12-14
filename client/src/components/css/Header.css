@@ -1,0 +1,17 @@
+header {
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+header a {
+  color: var(--clr-gold);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  header img {
+    height: 45px;
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */

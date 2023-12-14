@@ -1,0 +1,29 @@
+.card {
+  // TODO: fix padding when going from lg screen to md screen
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: 2rem 3rem;
+  margin-bottom: 10px;
+
+  .row.image {
+    // border: solid red;
+    height: 100px;
+  }
+
+  img {
+    max-height: 100px;
+  }
+
+  h2 {
+    color: var(--clr-dark-gray);
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    color: var(--clr-mid-gray);
+    font-size: small;
+    word-spacing: 0.3rem;
+  }
+
+}

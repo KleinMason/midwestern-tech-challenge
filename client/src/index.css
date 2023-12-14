@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-background: #222222;
+  --clr-text: #ffffff;
+
+  --clr-gold: #DEBF79;
+  --clr-dark-gray: #222222;
+  --clr-mid-gray: #858585;
+  --clr-light-gray: #F5F5F5;
+  --clr-red: #800000;
+
+  --ff-base: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-base);
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+}

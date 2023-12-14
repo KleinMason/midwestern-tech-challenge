@@ -1,0 +1,14 @@
+.home {
+  h1 {
+    font-size: 3rem;
+
+    .accent {
+      border-bottom: solid var(--clr-gold) 4px;
+    }
+  }
+
+  .challenge-link {
+    color: var(--clr-gold);
+    cursor: pointer;
+  }
+}

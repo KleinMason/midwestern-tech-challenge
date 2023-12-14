@@ -1,0 +1,42 @@
+.contact {
+
+  // height: 100vh;
+  // background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+
+
+  h1 {
+    font-size: 3rem;
+
+    .accent {
+      border-bottom: solid var(--clr-gold) 4px;
+    }
+  }
+
+  .info {
+    // padding-right: 5rem;
+  }
+
+  .contact-form {
+    h2 {
+      font-size: 2rem;
+    }
+
+    form {
+      // border: solid red;
+
+      input,
+      textarea {
+        width: 100%;
+        border: none;
+        background-color: var(--clr-light-gray);
+        color: var(--clr-mid-gray);
+        margin-bottom: 15px;
+        padding: 10px;
+      }
+
+      textarea {
+        resize: none;
+      }
+    }
+  }
+}

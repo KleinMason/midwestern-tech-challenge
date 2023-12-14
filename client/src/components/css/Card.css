@@ -1,0 +1,24 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: 2rem 3rem;
+  margin-bottom: 10px;
+}
+.card .row.image {
+  height: 100px;
+}
+.card img {
+  max-height: 100px;
+}
+.card h2 {
+  color: var(--clr-dark-gray);
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.card p {
+  color: var(--clr-mid-gray);
+  font-size: small;
+  word-spacing: 0.3rem;
+}
+
+/*# sourceMappingURL=Card.css.map */
