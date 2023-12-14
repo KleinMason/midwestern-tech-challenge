@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "serve": "sf serve --project=midwestern-client"
+    "serve": "sf serve --project=midwestern-client",
+    "restore": "sf install && sf build"
   },
   "dependencies": {
     "shaman-factory": "^2.0.2"
