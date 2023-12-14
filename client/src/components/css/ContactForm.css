@@ -1,0 +1,14 @@
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  border: none;
+  background-color: var(--clr-light-gray);
+  color: var(--clr-mid-gray);
+  margin-bottom: 15px;
+  padding: 10px;
+}
+.contact-form form textarea {
+  resize: none;
+}
+
+/*# sourceMappingURL=ContactForm.css.map */

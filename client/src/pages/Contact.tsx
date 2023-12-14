@@ -1,13 +1,8 @@
-import Button from "../components/Button";
+import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import "./css/Contact.css";
 
 const Contact = () => {
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    alert("hi");
-  };
-
   return (
     <div className="contact">
       <Header link="/" label="home"></Header>
@@ -30,28 +25,38 @@ const Contact = () => {
         </section>
         <section className="contact-form col-12 col-md-6">
           <h2>Heading Two</h2>
-          <form onSubmit={handleFormSubmit}>
+          <ContactForm></ContactForm>
+          {/* <form onSubmit={handleFormSubmit}>
             <div className="row">
               <div className="col-12 col-md-6">
-                <input type="text" placeholder="First Name" />
+                <input
+                  id="inputFirstName"
+                  type="text"
+                  placeholder="First Name"
+                />
               </div>
               <div className="col-12 col-md-6">
-                <input type="text" placeholder="Last Name" />
+                <input id="inputLastName" type="text" placeholder="Last Name" />
               </div>
             </div>
             <div className="row">
               <div className="col-12 col-md-6">
-                <input type="text" placeholder="Title" />
+                <input id="inputTitle" type="text" placeholder="Title" />
               </div>
               <div className="col-12 col-md-6">
-                <input type="text" placeholder="Email" required />
+                <input
+                  id="inputEmail"
+                  type="text"
+                  placeholder="Email"
+                  required
+                />
               </div>
             </div>
             <div className="row">
               <div className="col-12">
                 <textarea
                   name="message"
-                  id="message"
+                  id="inputMessage"
                   placeholder="Message"
                   rows={10}></textarea>
               </div>
@@ -61,7 +66,7 @@ const Contact = () => {
                 <Button label="Submit" onClick={() => {}}></Button>
               </div>
             </div>
-          </form>
+          </form> */}
         </section>
       </div>
     </div>

@@ -21,18 +21,6 @@
   color: var(--clr-dark-gray);
   font-size: 2rem;
 }
-.contact section.contact-form form input,
-.contact section.contact-form form textarea {
-  width: 100%;
-  border: none;
-  background-color: var(--clr-light-gray);
-  color: var(--clr-mid-gray);
-  margin-bottom: 15px;
-  padding: 10px;
-}
-.contact section.contact-form form textarea {
-  resize: none;
-}
 @media (max-width: 767px) {
   .contact .half-page-background {
     visibility: hidden;
