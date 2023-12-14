@@ -11,8 +11,9 @@ const Contact = () => {
   return (
     <div className="contact">
       <Header link="/" label="home"></Header>
+      <div className="half-page-background"></div>
       <div className="row">
-        <div className="info col-12 col-md-6">
+        <section className="info col-12 col-md-6">
           <h1>
             <span className="accent">Heading</span> One
           </h1>
@@ -26,8 +27,8 @@ const Contact = () => {
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
             officia deserunt mollit anim id est laborum.
           </p>
-        </div>
-        <div className="contact-form col-12 col-md-6">
+        </section>
+        <section className="contact-form col-12 col-md-6">
           <h2>Heading Two</h2>
           <form onSubmit={handleFormSubmit}>
             <div className="row">
@@ -61,7 +62,7 @@ const Contact = () => {
               </div>
             </div>
           </form>
-        </div>
+        </section>
       </div>
     </div>
   );
