@@ -1,2 +1,2 @@
-export * from './models/user';
+export * from './models/contact';
 export * from './database.context';

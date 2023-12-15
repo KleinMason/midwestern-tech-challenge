@@ -23,8 +23,8 @@ const ContactForm = ({ contactService }: Props) => {
     if (!isValid) return;
     setIsLoading(true);
     const contact: Contact = {
-      first_name: data.first_name,
-      last_name: data.last_name,
+      firstName: data.firstName,
+      lastName: data.lastName,
       title: data.title,
       email: data.email,
       message: data.message
@@ -44,10 +44,10 @@ const ContactForm = ({ contactService }: Props) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           <div className="col-12 col-md-6">
-            <input {...register("first_name")} placeholder="First Name" />
+            <input {...register("firstName")} placeholder="First Name" />
           </div>
           <div className="col-12 col-md-6">
-            <input {...register("last_name")} placeholder="Last Name" />
+            <input {...register("lastName")} placeholder="Last Name" />
           </div>
         </div>
         <div className="row">

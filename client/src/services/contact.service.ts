@@ -15,7 +15,7 @@ export class ContactService extends ApiService implements IContactService {
 
   constructor() {
     super();
-    this.baseUri = "https://api.mwi.dev/contact";
+    this.baseUri = "http://localhost:3000/api/contact";
   }
 
   addContact = async (contact: Contact): Promise<void> => {

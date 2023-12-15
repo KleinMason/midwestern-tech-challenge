@@ -4,7 +4,10 @@
     {
       "name": "midwestern-client",
       "environment": "node",
-      "path": "client"
+      "path": "client",
+      "runtimeDependencies": [
+        "midwestern-server"
+      ]
     },
     {
       "name": "midwestern-database",

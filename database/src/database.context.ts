@@ -1,17 +1,17 @@
 import { DatabaseContext, Collection } from 'mysql-shaman';
-import { User } from './models/user';
+import { Contact } from './models/contact';
 
 export interface IMysqlDataContext {
   models: {
-    user: Collection<User>
+    contact: Collection<Contact>
   }
   runQuery: <T>(query: string, args: any) => Promise<T>;
 }
 
 export class MysqlDataContext extends DatabaseContext implements IMysqlDataContext {
 
-  models = { 
-    user: new Collection<User>()
+  models = {
+    contact: new Collection<Contact>()
   }
 
   runQuery = <T>(query: string, args: any): Promise<T> => {

@@ -3,7 +3,7 @@ const TYPES = {
   Logger: "Logger",
   JsonFileService: "JsonFileService",
   MysqlDataContext: "MysqlDataContext",
-  //shaman: {"lifecycle": "transformation", "args": {"type": "compose", "target": "TYPES"}}
+  ContactService: "ContactService",
 };
 
 export { TYPES };

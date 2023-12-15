@@ -6,7 +6,7 @@ import { ShamanExpressController } from "shaman-api";
 @injectable()
 export class HealthController implements ShamanExpressController {
 
-  name: string = 'health';
+  name: string = 'health.controller';
 
   configure = (express: Application) => {
     let router = Router();
