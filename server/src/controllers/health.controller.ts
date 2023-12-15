@@ -1,19 +1,21 @@
 /* istanbul ignore file */
 import { Request, Response, Application, Router } from "express";
-import { injectable } from "inversify";
-import { ShamanExpressController } from "shaman-api";
+import { inject, injectable } from "inversify";
+import { TYPES } from "../composition/app.composition.types";
 
 @injectable()
-export class HealthController implements ShamanExpressController {
+export class HealthController {
 
-  name: string = 'health.controller';
+  private router: Router;
 
-  configure = (express: Application) => {
-    let router = Router();
-    router
+  constructor(
+    @inject(TYPES.ExpressApplication) app: Application
+  ) {
+    this.router = Router();
+    this.router
       .get('/', this.getStatus)
 
-    express.use('/api/health', router);
+    app.use('/api/health', this.router);
   }
 
   getStatus = (_req: Request, res: Response, _next: any) => {

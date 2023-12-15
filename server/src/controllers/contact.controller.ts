@@ -1,28 +1,27 @@
 /* istanbul ignore file */
 import { Application, Request, Response, Router } from "express";
 import { inject, injectable } from "inversify";
-import { RouteError, ShamanExpressController } from "shaman-api";
-import { TYPES } from "../composition/app.composition.types";
+import { SERVICE_TYPES, TYPES } from "../composition/app.composition.types";
 import { IContactService } from "../services/contact.service";
+import { RouteError } from "../models/route-error";
 import { Contact } from "midwestern-database";
 
 @injectable()
-export class ContactController implements ShamanExpressController {
+export class ContactController {
 
-  name: string = 'contact.controller';
+  private router: Router;
 
   constructor(
-    @inject(TYPES.ContactService) private contactService: IContactService,
-  ) { }
-
-  configure = (express: Application) => {
-    let router = Router();
-    router
+    @inject(TYPES.ExpressApplication) app: Application,
+    @inject(SERVICE_TYPES.ContactService) private contactService: IContactService,
+  ) {
+    this.router = Router();
+    this.router
       .get('/', this.getAllContacts)
       .get('/:contactId', this.getContact)
       .post('/', this.addContact)
 
-    express.use('/api/contact', router);
+    app.use('/api/contact', this.router);
   }
 
   getContact = (req: Request, res: Response, next: any) => {

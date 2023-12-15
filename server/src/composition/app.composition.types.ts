@@ -1,9 +1,20 @@
 const TYPES = {
   AppConfig: "AppConfig",
   Logger: "Logger",
-  JsonFileService: "JsonFileService",
+  ExpressApplication: "ExpressApplication",
+  ApiRouter: "ApiRouter",
   MysqlDataContext: "MysqlDataContext",
-  ContactService: "ContactService",
 };
 
-export { TYPES };
+const CONTROLLER_TYPES = {
+  HealthController: "HealthController",
+  ContactController: "ContactController",
+}
+
+const SERVICE_TYPES = {
+  ApiService: "ApiService",
+  JsonFileService: "JsonFileService",
+  ContactService: "ContactService",
+}
+
+export { TYPES, CONTROLLER_TYPES, SERVICE_TYPES };
