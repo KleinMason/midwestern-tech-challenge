@@ -5,6 +5,32 @@
       "name": "midwestern-client",
       "environment": "node",
       "path": "client"
+    },
+    {
+      "name": "midwestern-database",
+      "environment": "node",
+      "template": "node-shaman-database-sqlite",
+      "path": "database",
+      "specs": {
+        "contextName": "SqliteDataContext",
+        "databaseType": "sqlite"
+      }
+    },
+    {
+      "name": "midwestern-server",
+      "environment": "node",
+      "template": "node-express-server",
+      "path": "server",
+      "include": [
+        "midwestern-database"
+      ]
+    }
+  ],
+  "transform": [
+    {
+      "targetProject": "midwestern-server",
+      "transformation": "compose:datacontext",
+      "sourceProject": "midwestern-database"
     }
   ]
 }
