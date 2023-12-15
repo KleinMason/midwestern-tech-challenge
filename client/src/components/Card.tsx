@@ -2,34 +2,34 @@ import Button from "./Button";
 import "./css/Card.css";
 
 interface Props {
-  image: {
+  image?: {
     src: string;
     alt: string;
   };
-  heading: string;
-  description: string;
+  title: string;
+  content: string;
   button: {
     label: string;
     onClick: () => void;
   };
 }
 
-const Card = ({ image, heading, description, button }: Props) => {
+const Card = ({ image, title, content, button }: Props) => {
   return (
     <div className="card d-flex flex-column">
       <div className="row image">
         <div className="col-12 d-flex justify-content-center align-items-center">
-          <img src={image.src} alt={image.alt} />
+          {!!image && <img src={image.src} alt={image.alt} />}
         </div>
       </div>
       <div className="row">
         <div className="col-12">
-          <h2>{heading}</h2>
+          <h2>{title}</h2>
         </div>
       </div>
       <div className="row">
         <div className="col-12">
-          <p>{description}</p>
+          <p>{content}</p>
         </div>
       </div>
       <div className="row">

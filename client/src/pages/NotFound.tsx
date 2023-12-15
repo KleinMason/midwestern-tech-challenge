@@ -20,8 +20,8 @@ const NotFound = () => {
               src: imgQuestionMark,
               alt: "Question Mark"
             }}
-            heading={"Hmmm..."}
-            description={
+            title={"Hmmm..."}
+            content={
               "We where not able to find the page you're looking for. Please click the button below to return to the home page."
             }
             button={{

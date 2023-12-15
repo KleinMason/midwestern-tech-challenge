@@ -1,39 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import imgRabbit from "../assets/Rabbit.png";
 import imgShield from "../assets/Shield.png";
 import imgTalkie from "../assets/Talkie.png";
 import Card from "../components/Card";
 import Header from "../components/Header";
 import "./css/Home.css";
+import { IContentService } from "../services/content.service";
+import { IHomeContent } from "../models/home-content.model";
 
-const Home = () => {
+interface Props {
+  contentService: IContentService;
+}
+
+const Home = ({ contentService }: Props) => {
   const [challengeArray, setChallengeArray] = useState(new Array<string>());
+  const [cards, setCards] = useState(new Array<IHomeContent>());
 
-  const cards = [
-    {
-      id: 0,
-      image: { src: imgTalkie, alt: "talkie" },
-      heading: "Heading Two",
-      description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      button: { label: "Learn More", onClick: () => console.log(1) }
-    },
-    {
-      id: 1,
-      image: { src: imgRabbit, alt: "rabbit" },
-      heading: "Heading Two",
-      description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      button: { label: "Learn More", onClick: () => console.log(2) }
-    },
-    {
-      id: 2,
-      image: { src: imgShield, alt: "shield" },
-      heading: "Heading Two",
-      description:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      button: { label: "Learn More", onClick: () => console.log(3) }
-    }
+  useEffect(() => {
+    contentService
+      .getHomeCardContent()
+      .then((cardContent) => setCards([...cardContent]));
+  }, []);
+
+  const cardImages = [
+    { src: imgTalkie, alt: "talkie" },
+    { src: imgRabbit, alt: "rabbit" },
+    { src: imgShield, alt: "shield" }
   ];
 
   const handleChallengeLinkClick = () => {
@@ -66,10 +58,15 @@ const Home = () => {
           {cards.map((card) => (
             <div key={card.id} className="col-12 col-md-4">
               <Card
-                image={card.image}
-                heading={card.heading}
-                description={card.description}
-                button={card.button}></Card>
+                image={cardImages[card.id - 1]}
+                title={card.title}
+                content={card.content}
+                button={{
+                  label: "Learn More",
+                  onClick() {
+                    console.log(`card ${card.id} clicked`);
+                  }
+                }}></Card>
             </div>
           ))}
         </div>
