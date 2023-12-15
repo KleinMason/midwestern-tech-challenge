@@ -28,7 +28,7 @@ This will install all of the dependencies for the solution and all of its projec
 
 ### Configure the Database
 
-1. Open up the database project in your favorite editor and navigate to the `mysql-shaman-sample.json` file.
+1. Open up the database project in your favorite editor and navigate to the `mysql-shaman.sample.json` file.
 2. Copy this file and rename the copy to `mysql-shaman.json`.
    - Note: This file will contain some sensitive information. This file is ignored by git so you don't have to worry about accidentally committing it.
 3. Open up the `mysql-shaman.json` file and replace the values for the `host`, `user`, `password`, and `database` properties with the values for your MySql database.
