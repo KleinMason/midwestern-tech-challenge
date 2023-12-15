@@ -1,8 +1,8 @@
-import { DatabaseConfig } from 'sqlite-shaman';
+import { PoolConfig } from 'mysql';
 //shaman: {"lifecycle": "transformation", "args": {"type": "import", "target": "*"}}
 
 export class AppConfig {
   port: string;
-  sqliteConfig: DatabaseConfig;
+  mysqlConfig: PoolConfig;
   //shaman: {"lifecycle": "transformation", "args": {"type": "config", "target": "*"}}
 }

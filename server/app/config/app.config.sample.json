@@ -1,7 +1,11 @@
 {
 	"port": "3000",
-	"sqliteConfig": {
-		"databaseFilePath": "",
-		"schemaFilePath": ""
+	"mysqlConfig": {
+		"connectionLimit": 10,
+		"host": "",
+		"user": "",
+		"password": "",
+		"database": "",
+		"waitForConnections": false
 	}
 }

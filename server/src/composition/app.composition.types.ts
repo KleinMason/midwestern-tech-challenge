@@ -2,7 +2,7 @@ const TYPES = {
   AppConfig: "AppConfig",
   Logger: "Logger",
   JsonFileService: "JsonFileService",
-  SqliteDataContext: "SqliteDataContext",
+  MysqlDataContext: "MysqlDataContext",
   //shaman: {"lifecycle": "transformation", "args": {"type": "compose", "target": "TYPES"}}
 };
 

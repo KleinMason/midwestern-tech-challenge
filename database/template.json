@@ -1,10 +1,11 @@
 {
-  "name": "node-shaman-database-sqlite",
+  "name": "node-shaman-database-mysql",
   "files": [
     ".gitignore",
     "package-lock.json",
     "package.json",
     "README.md",
+    "shaman.scaffold.js",
     "tsconfig.json"
   ],
   "folders": [

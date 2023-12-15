@@ -1,19 +1,21 @@
-import { DatabaseContext, Collection } from 'sqlite-shaman';
+import { DatabaseContext, Collection } from 'mysql-shaman';
 import { User } from './models/user';
 
-export class ISqliteDataContext {
+export interface IMysqlDataContext {
   models: {
     user: Collection<User>
   }
-  runQuery: <T>(query: string, args: any) => Promise<T[]>;
+  runQuery: <T>(query: string, args: any) => Promise<T>;
 }
 
-export class SqliteDataContext extends DatabaseContext {
+export class MysqlDataContext extends DatabaseContext implements IMysqlDataContext {
+
   models = { 
     user: new Collection<User>()
   }
 
-  runQuery = <T>(query: string, args: any): Promise<T[]> => {
-    return this.query<T>(query, args);
+  runQuery = <T>(query: string, args: any): Promise<T> => {
+    return this.query<T>(query, args)
   }
+
 }

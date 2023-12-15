@@ -7,7 +7,7 @@ Currently, the solution consists of these projects:
 
 1. client - A React application that serves as the front-end for the solution.
 2. server - A Node.js application using Express that serves as the back-end for the solution (**_Scaffolded but not yet implemented_**).
-3. database - A Sqlite database that stores the data for the solution (**_Scaffolded but not implemented_**).
+3. database - A MySql database that stores the data for the solution (**_Scaffolded but not implemented_**).
 
 ## Getting Started
 

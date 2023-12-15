@@ -6,7 +6,7 @@ import { TYPES } from "./app.composition.types";
 import { AppConfig } from "../models/app.config";
 import { HealthController } from "../controllers/health/health.controller";
 import { SHAMAN_API_TYPES } from "shaman-api";
-import { ISqliteDataContext, SqliteDataContext } from 'midwestern-database';
+import { IMysqlDataContext, MysqlDataContext } from 'midwestern-database';
 //shaman: {"lifecycle": "transformation", "args": {"type": "import", "target": "*"}}
 
 export async function Compose(container: Container): Promise<Container> {
@@ -30,9 +30,9 @@ function configureRouter(container: Container): Promise<Container> {
 
 function configureDataContext(container: Container, config: AppConfig): Promise<Container> {
   return new Promise(res => {
-    let context = new SqliteDataContext();
-    context.initialize(config.sqliteConfig);
-    container.bind<ISqliteDataContext>(TYPES.SqliteDataContext).toConstantValue(context);
+    let context = new MysqlDataContext();
+    context.initialize(config.mysqlConfig);
+    container.bind<IMysqlDataContext>(TYPES.MysqlDataContext).toConstantValue(context);
     //shaman: {"lifecycle": "transformation", "args": {"type": "compose", "target": "datacontext"}}
     res(container);
   });

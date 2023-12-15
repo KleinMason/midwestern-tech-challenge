@@ -9,11 +9,11 @@
     {
       "name": "midwestern-database",
       "environment": "node",
-      "template": "node-shaman-database-sqlite",
+      "template": "node-shaman-database-mysql",
       "path": "database",
       "specs": {
-        "contextName": "SqliteDataContext",
-        "databaseType": "sqlite"
+        "contextName": "MysqlDataContext",
+        "databaseType": "mysql"
       }
     },
     {
