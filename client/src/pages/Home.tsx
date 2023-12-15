@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import imgRabbit from "../assets/Rabbit.png";
 import imgShield from "../assets/Shield.png";
 import imgTalkie from "../assets/Talkie.png";
 import Card from "../components/Card";
 import Header from "../components/Header";
-import "./css/Home.css";
+import { IPageContent } from "../models/page-content.model";
 import { IContentService } from "../services/content.service";
-import { IHomeContent } from "../models/home-content.model";
+import "./css/Home.css";
 
 interface Props {
   contentService: IContentService;
@@ -14,12 +14,13 @@ interface Props {
 
 const Home = ({ contentService }: Props) => {
   const [challengeArray, setChallengeArray] = useState(new Array<string>());
-  const [cards, setCards] = useState(new Array<IHomeContent>());
+  const [homeContent, setHomeContent] = useState(new Array<IPageContent>());
 
   useEffect(() => {
     contentService
-      .getHomeCardContent()
-      .then((cardContent) => setCards([...cardContent]));
+      .getHomePageContent()
+      .then((homeContent) => setHomeContent([...homeContent]))
+      .catch((error) => console.log(error));
   }, []);
 
   const cardImages = [
@@ -55,16 +56,16 @@ const Home = ({ contentService }: Props) => {
       <Header link="/contact" label="contact"></Header>
       <section>
         <div className="row">
-          {cards.map((card) => (
-            <div key={card.id} className="col-12 col-md-4">
+          {homeContent.map((c) => (
+            <div key={c.id} className="col-12 col-md-4">
               <Card
-                image={cardImages[card.id - 1]}
-                title={card.title}
-                content={card.content}
+                image={cardImages[c.id - 1]}
+                title={c.title}
+                content={c.content}
                 button={{
                   label: "Learn More",
                   onClick() {
-                    console.log(`card ${card.id} clicked`);
+                    console.log(`card ${c.id} clicked`);
                   }
                 }}></Card>
             </div>

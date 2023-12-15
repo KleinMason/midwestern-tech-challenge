@@ -1,7 +1,7 @@
-import Card from "../components/Card";
-import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import imgQuestionMark from "../assets/QuestionMark.png";
+import Card from "../components/Card";
+import Header from "../components/Header";
 
 const NotFound = () => {
   const navigate = useNavigate();

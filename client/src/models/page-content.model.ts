@@ -1,6 +1,6 @@
 import { IPage } from "./page.model";
 
-export interface IHomeContent {
+export interface IPageContent {
   id: number;
   page_id: number;
   title: string;

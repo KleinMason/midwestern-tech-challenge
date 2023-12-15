@@ -1,8 +1,9 @@
-import { IHomeContent } from "../models/home-content.model";
+import { IPageContent } from "../models/page-content.model";
 import { ApiService } from "./api.service";
 
 export interface IContentService {
-  getHomeCardContent: () => Promise<IHomeContent[]>;
+  getHomePageContent: () => Promise<IPageContent[]>;
+  getContactPageContent: () => Promise<IPageContent>;
 }
 
 export class ContentService extends ApiService implements IContentService {
@@ -18,8 +19,19 @@ export class ContentService extends ApiService implements IContentService {
     this.baseUri = "https://api.mwi.dev/content";
   }
 
-  getHomeCardContent = async (): Promise<IHomeContent[]> => {
-    return this.get<IHomeContent[]>('/home')
-      .then(homeContent => (homeContent));
+  getHomePageContent = async (): Promise<IPageContent[]> => {
+    return this.get<IPageContent[]>('/home')
+      .then(homeContent => (homeContent))
+      .catch(err => {
+        throw new Error(err);
+      });
+  }
+
+  getContactPageContent = async (): Promise<IPageContent> => {
+    return this.get<IPageContent[]>('/contact')
+      .then(contactContent => contactContent[0])
+      .catch(err => {
+        throw new Error(err);
+      });
   }
 }
