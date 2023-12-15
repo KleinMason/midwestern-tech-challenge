@@ -8,7 +8,9 @@ Currently, this repo only contains a client-side application built with React. S
 ## Getting Started
 
 To start the application, navigate to the directory of your choice and clone the repo:  
-`git clone https://github.com/KleinMason/midwestern-tech-challenge.git`  
+```bash
+git clone https://github.com/KleinMason/midwestern-tech-challenge.git
+```  
 Then, navigate into the newly created directory and run the following commands:
 
 ```bash
