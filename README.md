@@ -1,13 +1,13 @@
 # Midwestern Tech Challenge
 
-**_Please be aware, this project is still in development and parts of it may be changed in the near future._**
+**_Please be aware, this solution is still in development and parts of it may be changed in the near future._**
 
 My mono-repo solution for the Midwestern Tech Challenge.  
 Currently, the solution consists of these projects:
 
 1. client - A React application that serves as the front-end for the solution.
-2. server - A Node.js application using Express that serves as the back-end for the solution (**_Currently only used to POST the contact form_**).
-3. database - A MySql database that stores the data for the solution (**_Currently only storing contact form information_**).
+2. server - A Node.js application using Express that serves as the back-end for the solution (**_currently only used to POST the contact form_**).
+3. database - A MySql database that stores the data for the solution (**_currently only storing contact form information_**).
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ npm install &&
 npm run restore
 ```
 
-This will install all of the dependencies for the solution and all of its projects. The restore command will also run the build command for each project. With that, were almost ready to go! We just need to provide our database and server project access to a MySql database. Lets start with the database...
+This will install all of the dependencies for the solution and all of its projects. The restore command will also run the build command for each project. With that, were almost ready to go! We just need to provide our database and server projects access to a MySql database. Lets start with the database...
 
 ### Configure the Database
 
