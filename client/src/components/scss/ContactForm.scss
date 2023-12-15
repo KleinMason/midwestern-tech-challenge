@@ -13,4 +13,8 @@
   textarea {
     resize: none;
   }
+
+  .error {
+    border: 1px solid var(--clr-red);
+  }
 }

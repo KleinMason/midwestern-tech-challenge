@@ -5,5 +5,8 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
+button:disabled {
+  cursor: not-allowed;
+}
 
 /*# sourceMappingURL=Button.css.map */

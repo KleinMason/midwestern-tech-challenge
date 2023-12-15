@@ -10,5 +10,8 @@
 .contact-form form textarea {
   resize: none;
 }
+.contact-form form .error {
+  border: 1px solid var(--clr-red);
+}
 
 /*# sourceMappingURL=ContactForm.css.map */
