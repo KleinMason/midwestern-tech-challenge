@@ -1,6 +1,6 @@
 # Midwestern Tech Challenge
 
-**_Please be aware, this project is still in development and parts of it may be changed in the near future._**
+**_Please be aware, this solution is still in development and parts of it may be changed in the near future._**
 
 My mono-repo solution for the Midwestern Tech Challenge.  
 Currently, the solution consists of these projects:
