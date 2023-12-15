@@ -57,7 +57,7 @@ const Home = ({ contentService }: Props) => {
       <section>
         <div className="row">
           {homeContent.map((c) => (
-            <div key={c.id} className="col-12 col-md-4">
+            <div key={c.id} className="col-12 col-md-4 mb-4">
               <Card
                 image={cardImages[c.id - 1]}
                 title={c.title}
