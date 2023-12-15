@@ -1,6 +1,6 @@
 # Midwestern Tech Challenge
 
-**Please be aware this project is still in development and parts of it may be changed in the near future.**
+***Please be aware this project is still in development and parts of it may be changed in the near future.***
 
 My mono-repo solution for the Midwestern Tech Challenge.  
 Currently, this repo only contains a client-side application built with React. Shortly, I will add a server-side application built with Node.js + Express and a database.
