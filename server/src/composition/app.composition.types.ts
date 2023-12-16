@@ -9,12 +9,14 @@ const TYPES = {
 const CONTROLLER_TYPES = {
   HealthController: "HealthController",
   ContactController: "ContactController",
+  ContentController: "ContentController",
 }
 
 const SERVICE_TYPES = {
   ApiService: "ApiService",
   JsonFileService: "JsonFileService",
   ContactService: "ContactService",
+  ContentService: "ContentService",
 }
 
 export { TYPES, CONTROLLER_TYPES, SERVICE_TYPES };

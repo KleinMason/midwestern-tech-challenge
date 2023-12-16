@@ -3,6 +3,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cors from 'cors';
 import * as compression from 'compression';
+import * as path from 'path';
 
 import { Container, inject, injectable } from "inversify";
 import { TYPES } from "./composition/app.composition.types";
@@ -38,6 +39,8 @@ export class ApiService implements IApiService {
       methods: 'GET,POST,PUT,DELETE',
       allowedHeaders: allowedHeaders.join(','),
     }));
+
+    this.app.use(express.static(path.join(__dirname, '../public')));
 
     this.router.configure(container);
   }

@@ -6,7 +6,9 @@ export abstract class ApiService {
   get = <T>(path: string, headers?: Headers): Promise<T> => {
     return fetch(`${this.apiBaseUri}${path}`, { headers: headers })
       .then(response => response.json())
-      .then(data => (data.data));
+      .then(data => {
+        return <T>data;
+      });
   }
 
   post = (path: string, body: any, headers?: Headers): Promise<number> => {

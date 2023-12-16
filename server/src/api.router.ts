@@ -31,6 +31,7 @@ export class ApiRouter {
     this.controllers = [
       container.get<HealthController>(CONTROLLER_TYPES.HealthController),
       container.get<ContactController>(CONTROLLER_TYPES.ContactController),
+      container.get<ContactController>(CONTROLLER_TYPES.ContentController),
     ]
   }
 

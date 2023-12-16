@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import { IPageContent } from "../models/page-content.model";
 import { IContentService } from "../services/content.service";
 import "./css/Home.css";
+import { IHomeContent } from "../models/home-content.model";
 
 interface Props {
   contentService: IContentService;
@@ -14,7 +15,7 @@ interface Props {
 
 const Home = ({ contentService }: Props) => {
   const [challengeArray, setChallengeArray] = useState(new Array<string>());
-  const [homeContent, setHomeContent] = useState(new Array<IPageContent>());
+  const [homeContent, setHomeContent] = useState<IHomeContent[]>([]);
 
   useEffect(() => {
     contentService
@@ -57,15 +58,15 @@ const Home = ({ contentService }: Props) => {
       <section>
         <div className="row">
           {homeContent.map((c) => (
-            <div key={c.id} className="col-12 col-md-4 mb-4">
+            <div key={c.homeContentId} className="col-12 col-md-4 mb-4">
               <Card
-                image={cardImages[c.id - 1]}
+                image={{ src: c.imageUrl, alt: c.imageAlt }}
                 title={c.title}
                 content={c.content}
                 button={{
                   label: "Learn More",
                   onClick() {
-                    console.log(`card ${c.id} clicked`);
+                    console.log(`card ${c.homeContentId} clicked`);
                   }
                 }}></Card>
             </div>

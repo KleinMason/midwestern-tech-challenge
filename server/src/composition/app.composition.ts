@@ -11,10 +11,12 @@ import { CONTROLLER_TYPES, SERVICE_TYPES, TYPES } from "./app.composition.types"
 
 import { ApiService, IApiService } from "../api.service";
 import { ContactService, IContactService } from "../services/contact.service";
+import { ContentService, IContentService } from '../services/content.service';
 import { IJsonFileService, JsonFileService } from "../services/json-file.service";
 
-import { HealthController } from "../controllers/health.controller";
 import { ContactController } from '../controllers/contact.controller';
+import { ContentController } from '../controllers/content.controller';
+import { HealthController } from "../controllers/health.controller";
 
 export function Configure(config: AppConfig): Promise<Container> {
   return configureServices(new Container(), config)
@@ -28,7 +30,8 @@ function configureServices(container: Container, config: AppConfig): Promise<Con
   container.bind<express.Application>(TYPES.ExpressApplication).toConstantValue(express());
   container.bind<IApiService>(SERVICE_TYPES.ApiService).to(ApiService).inSingletonScope();
   container.bind<IJsonFileService>(SERVICE_TYPES.JsonFileService).to(JsonFileService);
-  container.bind<IContactService>(SERVICE_TYPES.ContactService).to(ContactService)
+  container.bind<IContactService>(SERVICE_TYPES.ContactService).to(ContactService);
+  container.bind<IContentService>(SERVICE_TYPES.ContentService).to(ContentService);
   return Promise.resolve(container);
 }
 
@@ -36,6 +39,7 @@ function configureRouter(container: Container): Promise<Container> {
   container.bind<ApiRouter>(TYPES.ApiRouter).to(ApiRouter);
   container.bind<HealthController>(CONTROLLER_TYPES.HealthController).to(HealthController);
   container.bind<ContactController>(CONTROLLER_TYPES.ContactController).to(ContactController);
+  container.bind<ContentController>(CONTROLLER_TYPES.ContentController).to(ContentController);
   return Promise.resolve(container);
 }
 

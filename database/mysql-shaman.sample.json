@@ -19,9 +19,20 @@
   "cwd": "./sql",
   "scripts": {
     "tables": [
-      "tables/contact.sql"
+      "tables/contact_content.sql",
+      "tables/contact.sql",
+      "tables/image.sql",
+      "tables/home_content.sql",
+      "tables/home_content_image.sql"
     ],
-    "primers": [],
-    "views": []
+    "primers": [
+      "primers/contact_content.primer.sql",
+      "primers/image.primer.sql",
+      "primers/home_content.primer.sql",
+      "primers/home_content_image.primer.sql"
+    ],
+    "views": [
+      "views/home_content_details.sql"
+    ]
   }
 }

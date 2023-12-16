@@ -5,13 +5,14 @@ import { IPageContent } from "../models/page-content.model";
 import { ContactService } from "../services/contact.service";
 import { IContentService } from "../services/content.service";
 import "./css/Contact.css";
+import { IContactContent } from "../models/contact-content.model";
 
 interface Props {
   contentService: IContentService;
 }
 
 const Contact = ({ contentService }: Props) => {
-  const [contactContent, setContactContent] = useState<IPageContent>();
+  const [contactContent, setContactContent] = useState<IContactContent>();
 
   useEffect(() => {
     contentService
