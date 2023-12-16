@@ -6,8 +6,8 @@ My mono-repo solution for the Midwestern Tech Challenge.
 Currently, the solution consists of these projects:
 
 1. client - A React application that serves as the front-end for the solution.
-2. server - A Node.js application using Express that serves as the back-end for the solution (**_currently only used to POST the contact form_**).
-3. database - A MySql database that stores the data for the solution (**_currently only storing contact form information_**).
+2. server - A Node.js application using Express that serves as the back-end for the solution.
+3. database - A MySql database that stores the data for the solution.
 
 ## Getting Started
 
