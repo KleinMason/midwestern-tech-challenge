@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "serve": "sf serve --project=midwestern-client",
+    "build": "sf build",
     "restore": "sf install && sf build"
   },
   "dependencies": {
